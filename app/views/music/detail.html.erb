@@ -1,0 +1,18 @@
+<h2>Song Profile</h2>
+
+<a href="/music/index">Home</a>
+<a href="/music/logout">Logout</a>
+<table>
+  <tr>
+    <th>Followers</th>
+    <th>Count</th>
+  </tr>
+  <tbody>
+    <% @users.each do |u| %>
+    <tr>
+      <td><a href="/user/profile/<%= u.follower_id %>"><%= u.follower.first_name %></a></td>
+      <td>Count</td>
+    </tr>
+  </tbody>
+      <% end %>
+  </table>

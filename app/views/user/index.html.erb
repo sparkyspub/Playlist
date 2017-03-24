@@ -1,0 +1,25 @@
+<div>
+  <% if flash[:message] %>
+  <% flash[:message].each do |message| %>
+    <%= message %>
+  <% end %>
+<% end %>
+</div>
+<h3>Register</h3>
+  <form class="" action="/user/create" method="post">
+    <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+    First Name:<input type="text" name="first_name" value="">
+    Last Name:<input type="text" name="last_name" value="">
+    Email:<input type="text" name="email" value="">
+    Password:<input type="password" name="password" value="">
+    Confirm Password:<input type="password_confirmation" name="confirm" value="">
+    <input type="submit" name="submit" value="submit">
+  </form>
+  <hr>
+<h3>Login</h3>
+<form class="" action="/user/login" method="post">
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+  Email:<input type="text" name="email" value="">
+  Password:<input type="password" name="password" value="">
+  <input type="submit" name="submit" value="submit">
+</form>

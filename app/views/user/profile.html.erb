@@ -1,0 +1,18 @@
+<a href="/music/index">Home</a>
+<a href="/music/logout">Logout</a>
+<table>
+  <tr>
+    <th>Artist</th>
+    <th>Title</th>
+    <th>Times Added</th>
+  </tr>
+  <tbody>
+    <% @songs.each do |s| %>
+    <tr>
+      <td><%= s.artist %></td>
+      <td><%= s.title %></td>
+      <td>Count</td>
+    </tr>
+  </tbody>
+      <% end %>
+  </table>

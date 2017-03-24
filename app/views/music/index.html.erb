@@ -1,0 +1,41 @@
+<h2>Welcome <%= @user.first_name %></h2>
+<a href="/music/logout">Logout</a>
+<h4>You're at VibeShare</h4>
+
+<table>
+  <tr>
+    <th>Artist</th>
+    <th>Title</th>
+    <th>Following</th>
+    <th>Add to Playlist</th>
+  </tr>
+  <tbody>
+    <% @songs.each do |s| %>
+    <tr>
+      <td><%= s.artist%></td>
+      <td><a href="/music/detail/<%= s.id %>"><%= s.title %></a></td>
+      <td><%= s.counter %></td>
+      <td><button type="button" name="/music/add">Add</button></td>
+    </tr>
+  </tbody>
+      <% end %>
+  </table>
+
+
+
+
+
+
+
+
+
+
+
+<h3>Add a Vibe</h3>
+
+<form class="" action="/music/create" method="post">
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+  Artist:<input type="text" name="artist" placeholder="Artist">
+  Title:<input type="text" name="title" placeholder="Title">
+  <input type="submit" name="" value="Submit">
+</form>
